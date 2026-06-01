@@ -24,6 +24,7 @@ This landing app includes Pages Functions for auth routes:
 - `/auth/google/start` (browser redirect to auth origin, preserves query string)
 - `/auth/google/complete`
 - `/auth/google/session`
+- `/auth/debug` (deployment and auth-origin diagnostics)
 
 Set this Pages environment variable in Cloudflare dashboard:
 
