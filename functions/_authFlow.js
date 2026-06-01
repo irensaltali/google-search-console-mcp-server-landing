@@ -108,10 +108,16 @@ export async function encryptRefreshToken(plaintext, secret, aad) {
     textEncoder().encode(plaintext)
   );
 
+  const cipherBytes = new Uint8Array(cipher);
+  const tagLength = 16;
+  const authTag = cipherBytes.slice(cipherBytes.length - tagLength);
+  const ciphertext = cipherBytes.slice(0, cipherBytes.length - tagLength);
+
   const payload = {
     v: 1,
     iv: toBase64Url(iv),
-    ciphertext: toBase64Url(new Uint8Array(cipher))
+    tag: toBase64Url(authTag),
+    ciphertext: toBase64Url(ciphertext)
   };
   return toBase64Url(textEncoder().encode(JSON.stringify(payload)));
 }
