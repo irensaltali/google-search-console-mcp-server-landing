@@ -6,7 +6,7 @@
     <title>Google Search Console MCP Server for AI Workflows</title>
     <meta
       name="description"
-      content="A remote MCP server for Google Search Console with OAuth, Search Analytics, URL Inspection, sitemap tools, mutation guards, and MCPize-ready deployment."
+      content="A hosted Google Search Console MCP server with OAuth, Search Analytics, URL Inspection, sitemap tools, and MCPize add-to-client setup."
     />
     <link rel="canonical" href="https://google-search-console-mcp-server.irensaltali.com/" />
     <meta property="og:type" content="website" />
@@ -78,7 +78,7 @@
                 "name": "Does it require a local MCP server setup?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. The landing page points to a remote MCPize connection flow, so users can connect the hosted server to an MCP client without local setup."
+                  "text": "No. Add the hosted server to a supported MCP client through MCPize, then authorize Google and start using the tools."
                 }
               },
               {
@@ -117,7 +117,6 @@
         <a href="#tools">Tools</a>
         <a href="#flow">Flow</a>
         <a href="#faq">FAQ</a>
-        <a href="#deploy">Deploy</a>
       </nav>
       <a class="header-action" href="https://mcpize.com/mcp/google-search-console-mcp-server">Open MCPize</a>
     </header>
@@ -128,19 +127,113 @@
           <p class="eyebrow">Remote MCP server for search operators</p>
           <h1>Google Search Console MCP Server</h1>
           <p class="hero-lede">
-            Bring Search Console properties, performance queries, URL Inspection, and sitemap operations into Claude or any MCP client without local setup.
+            Add Search Console properties, performance queries, URL Inspection, and sitemap operations to Claude Code, Codex, Gemini CLI, GitHub Copilot, OpenCode, Factory, Claude.ai, or ChatGPT without running your own server.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary" href="https://mcpize.com/mcp/google-search-console-mcp-server">
-              Connect on MCPize
+              Add on MCPize
             </a>
-            <button class="button secondary" type="button" data-copy="npx -y mcpize connect @iren/google-search-console-mcp-server --client claude">
-              Copy install command
+            <button class="button secondary" type="button" data-copy-button>
+              Copy add command
             </button>
           </div>
-          <div class="command" aria-label="MCPize connection command">
-            <code>npx -y mcpize connect @iren/google-search-console-mcp-server --client claude</code>
+          <div class="client-configurator" data-client-picker>
+            <div class="configurator-head">
+              <span>Client</span>
+              <span>Install as MCP</span>
+            </div>
+            <button
+              class="client-trigger"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              data-client-trigger
+            >
+              <span class="client-trigger-label">
+                <span class="client-avatar" data-client-avatar>CC</span>
+                <span class="client-text" data-client-label>Claude Code</span>
+              </span>
+              <span class="client-caret" aria-hidden="true"></span>
+            </button>
+            <div class="client-menu" hidden data-client-menu>
+              <label class="client-search">
+                <span class="client-search-icon" aria-hidden="true"></span>
+                <input
+                  type="search"
+                  placeholder="Search clients..."
+                  autocomplete="off"
+                  spellcheck="false"
+                  data-client-search
+                />
+              </label>
+              <div class="client-group">
+                <p>AI Agent CLI</p>
+                <button type="button" class="client-option is-active" data-client="claude-code" data-command="npx -y mcpize connect @iren/google-search-console-mcp-server --client claude-code" data-avatar="CC" data-label="Claude Code" data-group="AI Agent CLI">
+                  <span class="client-avatar">CC</span>
+                  <span class="client-option-copy">
+                    <strong>Claude Code</strong>
+                    <small>Anthropic CLI workflow</small>
+                  </span>
+                </button>
+                <button type="button" class="client-option" data-client="codex" data-command="npx -y mcpize connect @iren/google-search-console-mcp-server --client codex" data-avatar="CX" data-label="Codex" data-group="AI Agent CLI">
+                  <span class="client-avatar">CX</span>
+                  <span class="client-option-copy">
+                    <strong>Codex</strong>
+                    <small>OpenAI coding CLI</small>
+                  </span>
+                </button>
+                <button type="button" class="client-option" data-client="gemini-cli" data-command="npx -y mcpize connect @iren/google-search-console-mcp-server --client gemini-cli" data-avatar="GM" data-label="Gemini CLI" data-group="AI Agent CLI">
+                  <span class="client-avatar">GM</span>
+                  <span class="client-option-copy">
+                    <strong>Gemini CLI</strong>
+                    <small>Google terminal workflow</small>
+                  </span>
+                </button>
+                <button type="button" class="client-option" data-client="github-copilot" data-command="npx -y mcpize connect @iren/google-search-console-mcp-server --client github-copilot" data-avatar="GC" data-label="GitHub Copilot" data-group="AI Agent CLI">
+                  <span class="client-avatar">GC</span>
+                  <span class="client-option-copy">
+                    <strong>GitHub Copilot</strong>
+                    <small>VS Code and IDE agent mode</small>
+                  </span>
+                </button>
+                <button type="button" class="client-option" data-client="opencode" data-command="npx -y mcpize connect @iren/google-search-console-mcp-server --client opencode" data-avatar="OC" data-label="OpenCode" data-group="AI Agent CLI">
+                  <span class="client-avatar">OC</span>
+                  <span class="client-option-copy">
+                    <strong>OpenCode</strong>
+                    <small>Open-source coding client</small>
+                  </span>
+                </button>
+                <button type="button" class="client-option" data-client="factory" data-command="npx -y mcpize connect @iren/google-search-console-mcp-server --client factory" data-avatar="FY" data-label="Factory" data-group="AI Agent CLI">
+                  <span class="client-avatar">FY</span>
+                  <span class="client-option-copy">
+                    <strong>Factory</strong>
+                    <small>Factory agent runtime</small>
+                  </span>
+                </button>
+              </div>
+              <div class="client-group">
+                <p>Web Clients</p>
+                <button type="button" class="client-option" data-client="claude-ai" data-command="npx -y mcpize connect @iren/google-search-console-mcp-server --client claude-ai" data-avatar="CA" data-label="Claude.ai" data-group="Web Clients">
+                  <span class="client-avatar">CA</span>
+                  <span class="client-option-copy">
+                    <strong>Claude.ai</strong>
+                    <small>Browser-based Claude</small>
+                  </span>
+                </button>
+                <button type="button" class="client-option" data-client="chatgpt" data-command="npx -y mcpize connect @iren/google-search-console-mcp-server --client chatgpt" data-avatar="CG" data-label="ChatGPT" data-group="Web Clients">
+                  <span class="client-avatar">CG</span>
+                  <span class="client-option-copy">
+                    <strong>ChatGPT</strong>
+                    <small>OpenAI web client</small>
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
+          <div class="command" aria-label="MCPize add command">
+            <code data-command-output>npx -y mcpize connect @iren/google-search-console-mcp-server --client claude-code</code>
+          </div>
+          <p class="install-note">This server is added to a client as MCP. It is not something the user deploys.</p>
         </div>
 
         <div class="ops-panel" aria-label="Product preview">
@@ -238,21 +331,26 @@
       <section class="section flow-section" id="flow">
         <div class="section-heading">
           <p class="section-kicker">Connection flow</p>
-          <h2>Remote-first, account-scoped, and guarded.</h2>
+          <h2>Add the server, authorize once, then work from live data.</h2>
         </div>
         <div class="flow-grid">
           <article class="flow-step">
             <span>01</span>
-            <h3>Connect via MCPize</h3>
-            <p>Use the hosted listing or the one-line MCPize command to add the server to an MCP client.</p>
+            <h3>Pick a client</h3>
+            <p>Choose the MCP client you actually work in, from terminal agents to hosted web apps.</p>
           </article>
           <article class="flow-step">
             <span>02</span>
+            <h3>Add through MCPize</h3>
+            <p>Use the hosted listing or the one-line add command to register the hosted server with that client.</p>
+          </article>
+          <article class="flow-step">
+            <span>03</span>
             <h3>Authorize Google</h3>
             <p>The server returns a Google OAuth URL and stores refresh access per subscriber after the callback.</p>
           </article>
           <article class="flow-step">
-            <span>03</span>
+            <span>04</span>
             <h3>Ask with evidence</h3>
             <p>Agents can list properties, query performance, inspect URLs, and manage sitemap state from the MCP tool surface.</p>
           </article>
@@ -271,7 +369,7 @@
           </article>
           <article>
             <h3>Does it require a local MCP server setup?</h3>
-            <p>No. The MCPize connection flow lets users connect the hosted server to Claude or another MCP client without running a local service.</p>
+            <p>No. Add the hosted server to a supported MCP client through MCPize, authorize Google, and use the tools from there.</p>
           </article>
           <article>
             <h3>Which Search Console operations are supported?</h3>
@@ -284,26 +382,10 @@
         </div>
       </section>
 
-      <section class="section deploy-section" id="deploy">
-        <div class="deploy-copy">
-          <p class="section-kicker">Deployment facts</p>
-          <h2>MCPize-ready HTTP transport with explicit safety rails.</h2>
-          <p>
-            The server runs as a remote HTTP MCP endpoint at <code>/mcp</code>, includes health checks at <code>/healthz</code> and <code>/ping</code>, and expects a stable subscriber identity header from MCPize.
-          </p>
-        </div>
-        <div class="deploy-terminal" aria-label="Deployment checklist">
-          <div><span>01</span><code>npm run build</code></div>
-          <div><span>02</span><code>deploy dist/</code></div>
-          <div><span>03</span><code>GET /ping</code></div>
-          <div><span>04</span><code>POST /mcp</code></div>
-        </div>
-      </section>
-
       <section class="final-cta">
         <div>
-          <p class="section-kicker">Ready endpoint</p>
-          <h2>Connect Search Console to your MCP workflow.</h2>
+          <p class="section-kicker">Ready as MCP</p>
+          <h2>Add Search Console directly to the client you already use.</h2>
         </div>
         <a class="button primary" href="https://mcpize.com/mcp/google-search-console-mcp-server">Open the MCPize listing</a>
       </section>
