@@ -1,20 +1,16 @@
-const DEFAULT_AUTH_ORIGIN = "https://google-search-console-mcp-server.mcpize.run";
-
-function authOrigin(env) {
-  const value = env?.AUTH_PROXY_ORIGIN;
-  return value && value.length > 0 ? value : DEFAULT_AUTH_ORIGIN;
-}
+import { requiredConfigSummary } from "../_authFlow.js";
 
 export async function onRequestGet(context) {
   const url = new URL(context.request.url);
   const payload = {
     ok: true,
     route: "/auth/debug",
+    authMode: "first-party-supabase",
     deployedAtUtc: new Date().toISOString(),
-    authProxyOrigin: authOrigin(context.env),
+    config: requiredConfigSummary(context.env),
     requestPath: url.pathname,
     requestQuery: Object.fromEntries(url.searchParams.entries()),
-    expectsStartRedirectTo: `${authOrigin(context.env)}/auth/google/start`
+    expectsStartRedirectTo: `${String(context.env?.SUPABASE_URL || "<missing SUPABASE_URL>")}/auth/v1/authorize`
   };
 
   return new Response(JSON.stringify(payload, null, 2), {

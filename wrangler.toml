@@ -1,0 +1,6 @@
+name = "google-search-console-mcp-server-landing"
+compatibility_date = "2026-06-01"
+pages_build_output_dir = "dist"
+
+[vars]
+SUPABASE_URL = "https://bbihthevyhrjemiwqzwh.supabase.co"

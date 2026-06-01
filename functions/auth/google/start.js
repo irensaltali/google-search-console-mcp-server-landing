@@ -1,13 +1,22 @@
-const DEFAULT_AUTH_ORIGIN = "https://google-search-console-mcp-server.mcpize.run";
-
-function authOrigin(env) {
-  const value = env?.AUTH_PROXY_ORIGIN;
-  return value && value.length > 0 ? value : DEFAULT_AUTH_ORIGIN;
-}
+import { buildSupabaseGoogleAuthorizeUrl } from "../../_authFlow.js";
 
 export async function onRequestGet(context) {
-  const source = new URL(context.request.url);
-  const destination = new URL("/auth/google/start", authOrigin(context.env));
-  destination.search = source.search;
-  return Response.redirect(destination.toString(), 302);
+  const url = new URL(context.request.url);
+  const subscriberId = (url.searchParams.get("subscriber_id") || "").trim();
+  if (!subscriberId) {
+    return new Response(JSON.stringify({ error: "Missing subscriber_id" }), {
+      status: 400,
+      headers: { "content-type": "application/json; charset=utf-8" }
+    });
+  }
+
+  try {
+    const authorizeUrl = await buildSupabaseGoogleAuthorizeUrl(context.request.url, context.env, subscriberId);
+    return Response.redirect(authorizeUrl, 302);
+  } catch (error) {
+    return new Response(JSON.stringify({ error: String(error?.message || error) }), {
+      status: 500,
+      headers: { "content-type": "application/json; charset=utf-8" }
+    });
+  }
 }
