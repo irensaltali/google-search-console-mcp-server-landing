@@ -2,10 +2,11 @@ const GOOGLE_WEBMASTERS_SCOPE = "https://www.googleapis.com/auth/webmasters";
 
 function requiredEnv(env, key) {
   const value = env?.[key];
-  if (!value || String(value).trim().length === 0) {
+  const normalized = value ? String(value).trim() : "";
+  if (!normalized) {
     throw new Error(`Missing required Pages environment variable: ${key}`);
   }
-  return String(value);
+  return normalized;
 }
 
 function textEncoder() {
