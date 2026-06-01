@@ -18,6 +18,12 @@ function toBase64Url(bytes) {
   return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
 }
 
+function toBase64(bytes) {
+  let binary = "";
+  for (const b of bytes) binary += String.fromCharCode(b);
+  return btoa(binary);
+}
+
 function fromBase64Url(value) {
   const normalized = value.replace(/-/g, "+").replace(/_/g, "/");
   const padded = normalized + "=".repeat((4 - (normalized.length % 4)) % 4);
@@ -115,9 +121,9 @@ export async function encryptRefreshToken(plaintext, secret, aad) {
 
   const payload = {
     v: 1,
-    iv: toBase64Url(iv),
-    tag: toBase64Url(authTag),
-    ciphertext: toBase64Url(ciphertext)
+    iv: toBase64(iv),
+    tag: toBase64(authTag),
+    ciphertext: toBase64(ciphertext)
   };
   return toBase64Url(textEncoder().encode(JSON.stringify(payload)));
 }
