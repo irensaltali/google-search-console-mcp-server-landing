@@ -19,9 +19,9 @@ npm run build
 
 ## Cloudflare Pages Auth Proxy
 
-This landing app includes Pages Functions that proxy auth routes:
+This landing app includes Pages Functions for auth routes:
 
-- `/auth/google/start`
+- `/auth/google/start` (browser redirect to auth origin, preserves query string)
 - `/auth/google/complete`
 - `/auth/google/session`
 
