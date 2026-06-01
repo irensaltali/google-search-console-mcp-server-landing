@@ -216,6 +216,187 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.client-configurator {
+  position: relative;
+  max-width: 720px;
+  margin-bottom: 1rem;
+}
+
+.configurator-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.55rem;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.client-trigger,
+.client-option {
+  width: 100%;
+  border: 1px solid var(--ink);
+  border-radius: 18px;
+  background: var(--paper-strong);
+  color: var(--ink);
+  font-family: var(--mono);
+  cursor: pointer;
+}
+
+.client-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 68px;
+  padding: 0.9rem 1rem;
+  box-shadow: 8px 8px 0 rgba(16, 23, 19, 0.08);
+}
+
+.client-trigger-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.client-avatar {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink);
+  border-radius: 12px;
+  background: rgba(255, 254, 246, 0.92);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.client-text {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.client-caret {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid var(--ink-soft);
+  border-bottom: 2px solid var(--ink-soft);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 160ms ease;
+}
+
+.client-trigger[aria-expanded="true"] .client-caret {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+.client-menu {
+  position: absolute;
+  z-index: 25;
+  top: calc(100% + 10px);
+  left: 0;
+  width: min(460px, 100%);
+  padding: 0.8rem;
+  border: 1px solid var(--ink);
+  border-radius: 18px;
+  background: rgba(255, 254, 246, 0.98);
+  box-shadow: 0 22px 55px rgba(8, 16, 12, 0.24);
+}
+
+.client-search {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 254, 246, 0.94);
+}
+
+.client-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+
+.client-search input::placeholder {
+  color: var(--ink-soft);
+}
+
+.client-search-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--ink-soft);
+  border-radius: 999px;
+}
+
+.client-search-icon::after {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 7px;
+  height: 2px;
+  background: var(--ink-soft);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.client-group + .client-group {
+  margin-top: 1rem;
+}
+
+.client-group p {
+  margin: 0 0 0.6rem;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.client-option {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 14px;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.client-option + .client-option {
+  margin-top: 0.45rem;
+}
+
+.client-option:hover,
+.client-option.is-active {
+  border-color: var(--ink);
+  background: rgba(26, 115, 232, 0.08);
+  transform: translateX(3px);
+}
+
+.client-option-copy {
+  display: grid;
+  gap: 0.12rem;
+  text-align: left;
+}
+
+.client-option-copy strong {
+  font-size: 0.94rem;
+}
+
+.client-option-copy small {
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+}
+
+.client-option[hidden] {
+  display: none;
+}
+
 .button {
   display: inline-flex;
   min-height: 46px;
@@ -260,6 +441,13 @@ h3 {
   white-space: nowrap;
 }
 
+.install-note {
+  max-width: 720px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
 .ops-panel {
   position: relative;
   padding: 0.8rem;
@@ -297,8 +485,7 @@ h3 {
 
 .panel-top,
 .query-head,
-.query-list li,
-.deploy-terminal div {
+.query-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -456,7 +643,7 @@ h3 {
 }
 
 .intro > p,
-.deploy-copy p {
+.install-note {
   margin-bottom: 0;
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.7vw, 1.3rem);
@@ -523,7 +710,7 @@ h3 {
 }
 
 .flow-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .faq-grid {
@@ -535,35 +722,6 @@ h3 {
   margin-bottom: 2.5rem;
   color: var(--red);
   font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.deploy-section {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
-  gap: clamp(2rem, 6vw, 5rem);
-  align-items: center;
-}
-
-.deploy-terminal {
-  border: 1px solid var(--ink);
-  background: var(--black);
-  color: var(--paper-strong);
-  box-shadow: 10px 10px 0 var(--green);
-}
-
-.deploy-terminal div {
-  min-height: 66px;
-  padding: 1rem 1.1rem;
-  border-bottom: 1px solid rgba(255, 254, 246, 0.18);
-}
-
-.deploy-terminal div:last-child {
-  border-bottom: 0;
-}
-
-.deploy-terminal span {
-  color: var(--yellow);
   font-weight: 700;
 }
 
@@ -608,8 +766,7 @@ h3 {
   }
 
   .hero,
-  .intro,
-  .deploy-section {
+  .intro {
     grid-template-columns: 1fr;
   }
 
@@ -667,6 +824,10 @@ h3 {
   .command {
     white-space: normal;
     overflow-wrap: anywhere;
+  }
+
+  .client-menu {
+    width: 100%;
   }
 
   .ops-panel::before,
