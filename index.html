@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Google Search Console MCP Server | Search data inside your AI workflow</title>
+    <title>Google Search Console MCP Server for AI Workflows</title>
     <meta
       name="description"
       content="A remote MCP server for Google Search Console with OAuth, Search Analytics, URL Inspection, sitemap tools, mutation guards, and MCPize-ready deployment."
@@ -16,7 +16,24 @@
       content="Connect Google Search Console to MCP clients and query search performance, URL inspection, properties, and sitemaps from your agent workflow."
     />
     <meta property="og:url" content="https://google-search-console-mcp-server.irensaltali.com/" />
+    <meta property="og:image" content="https://google-search-console-mcp-server.irensaltali.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Abstract analytics dashboard showing Search Console data flowing into an MCP server workflow."
+    />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Google Search Console MCP Server" />
+    <meta
+      name="twitter:description"
+      content="Connect Google Search Console to MCP clients and query performance, URL inspection, properties, and sitemaps from your agent workflow."
+    />
+    <meta name="twitter:image" content="https://google-search-console-mcp-server.irensaltali.com/og-image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Abstract analytics dashboard showing Search Console data flowing into an MCP server workflow."
+    />
     <meta name="theme-color" content="#101713" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +41,67 @@
       href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,750&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://google-search-console-mcp-server.irensaltali.com/#software",
+            "name": "Google Search Console MCP Server",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://google-search-console-mcp-server.irensaltali.com/",
+            "description": "A remote MCP server for connecting Google Search Console data to AI assistant workflows, including Search Analytics, URL Inspection, properties, and sitemap tools.",
+            "image": "https://google-search-console-mcp-server.irensaltali.com/og-image.jpg"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://google-search-console-mcp-server.irensaltali.com/#website",
+            "name": "Google Search Console MCP Server",
+            "url": "https://google-search-console-mcp-server.irensaltali.com/"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://google-search-console-mcp-server.irensaltali.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What does the Google Search Console MCP Server do?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It connects Search Console properties to MCP clients so agents can query performance data, inspect URLs, list properties, and manage sitemaps from the same workflow."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does it require a local MCP server setup?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The landing page points to a remote MCPize connection flow, so users can connect the hosted server to an MCP client without local setup."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which Search Console operations are supported?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The tool surface includes Google account connection, site listing, Search Analytics queries, URL Inspection, and sitemap list, fetch, submit, and delete operations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How are write actions protected?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Mutation-style operations use explicit safety rails and confirmation guards so agents can inspect evidence before changing sitemap state."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -38,6 +116,7 @@
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#tools">Tools</a>
         <a href="#flow">Flow</a>
+        <a href="#faq">FAQ</a>
         <a href="#deploy">Deploy</a>
       </nav>
       <a class="header-action" href="https://mcpize.com/mcp/google-search-console-mcp-server">Open MCPize</a>
@@ -180,6 +259,31 @@
         </div>
       </section>
 
+      <section class="section faq-section" id="faq">
+        <div class="section-heading">
+          <p class="section-kicker">FAQ</p>
+          <h2>Answers for search, indexing, and setup intent.</h2>
+        </div>
+        <div class="faq-grid">
+          <article>
+            <h3>What does the Google Search Console MCP Server do?</h3>
+            <p>It connects Search Console properties to MCP clients so agents can query performance data, inspect URLs, list properties, and manage sitemaps from the same workflow.</p>
+          </article>
+          <article>
+            <h3>Does it require a local MCP server setup?</h3>
+            <p>No. The MCPize connection flow lets users connect the hosted server to Claude or another MCP client without running a local service.</p>
+          </article>
+          <article>
+            <h3>Which Search Console operations are supported?</h3>
+            <p>The tool surface includes Google account connection, site listing, Search Analytics queries, URL Inspection, and sitemap list, fetch, submit, and delete operations.</p>
+          </article>
+          <article>
+            <h3>How are write actions protected?</h3>
+            <p>Mutation-style operations use explicit safety rails and confirmation guards so agents can inspect evidence before changing sitemap state.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section deploy-section" id="deploy">
         <div class="deploy-copy">
           <p class="section-kicker">Deployment facts</p>
@@ -190,7 +294,7 @@
         </div>
         <div class="deploy-terminal" aria-label="Deployment checklist">
           <div><span>01</span><code>npm run build</code></div>
-          <div><span>02</span><code>npm start</code></div>
+          <div><span>02</span><code>deploy dist/</code></div>
           <div><span>03</span><code>GET /ping</code></div>
           <div><span>04</span><code>POST /mcp</code></div>
         </div>

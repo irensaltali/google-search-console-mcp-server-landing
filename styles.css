@@ -468,7 +468,8 @@ h3 {
 }
 
 .tool-grid,
-.flow-grid {
+.flow-grid,
+.faq-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--ink);
@@ -477,7 +478,8 @@ h3 {
 }
 
 .tool-grid article,
-.flow-step {
+.flow-step,
+.faq-grid article {
   min-width: 0;
   padding: clamp(1rem, 2vw, 1.5rem);
   border-right: 1px solid var(--ink);
@@ -486,7 +488,8 @@ h3 {
 }
 
 .tool-grid p,
-.flow-step p {
+.flow-step p,
+.faq-grid p {
   margin-bottom: 0;
   color: var(--ink-soft);
   font-size: 0.9rem;
@@ -521,6 +524,10 @@ h3 {
 
 .flow-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.faq-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flow-step span {
@@ -615,7 +622,8 @@ h3 {
   }
 
   .tool-grid,
-  .flow-grid {
+  .flow-grid,
+  .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -669,6 +677,7 @@ h3 {
   .metric-grid,
   .tool-grid,
   .flow-grid,
+  .faq-grid,
   .tool-rail,
   .ticker {
     grid-template-columns: 1fr;
