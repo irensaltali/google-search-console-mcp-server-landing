@@ -642,8 +642,7 @@ h3 {
   align-items: end;
 }
 
-.intro > p,
-.install-note {
+.intro > p {
   margin-bottom: 0;
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.7vw, 1.3rem);
