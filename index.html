@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Google Search Console MCP Server | Search data inside your AI workflow</title>
+    <meta
+      name="description"
+      content="A remote MCP server for Google Search Console with OAuth, Search Analytics, URL Inspection, sitemap tools, mutation guards, and MCPize-ready deployment."
+    />
+    <link rel="canonical" href="https://google-search-console-mcp-server.irensaltali.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Google Search Console MCP Server" />
+    <meta
+      property="og:description"
+      content="Connect Google Search Console to MCP clients and query search performance, URL inspection, properties, and sitemaps from your agent workflow."
+    />
+    <meta property="og:url" content="https://google-search-console-mcp-server.irensaltali.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#101713" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,750&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Google Search Console MCP Server home">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span>GSC MCP</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#tools">Tools</a>
+        <a href="#flow">Flow</a>
+        <a href="#deploy">Deploy</a>
+      </nav>
+      <a class="header-action" href="https://mcpize.com/mcp/google-search-console-mcp-server">Open MCPize</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Remote MCP server for search operators</p>
+          <h1>Google Search Console MCP Server</h1>
+          <p class="hero-lede">
+            Bring Search Console properties, performance queries, URL Inspection, and sitemap operations into Claude or any MCP client without local setup.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="https://mcpize.com/mcp/google-search-console-mcp-server">
+              Connect on MCPize
+            </a>
+            <button class="button secondary" type="button" data-copy="npx -y mcpize connect @iren/google-search-console-mcp-server --client claude">
+              Copy install command
+            </button>
+          </div>
+          <div class="command" aria-label="MCPize connection command">
+            <code>npx -y mcpize connect @iren/google-search-console-mcp-server --client claude</code>
+          </div>
+        </div>
+
+        <div class="ops-panel" aria-label="Product preview">
+          <div class="panel-top">
+            <span>POST /mcp</span>
+            <span class="status-dot">live transport</span>
+          </div>
+          <div class="query-card">
+            <div class="query-head">
+              <span class="tool-name">query_search_analytics</span>
+              <span class="latency">412 ms</span>
+            </div>
+            <div class="metric-grid">
+              <div>
+                <strong>148,392</strong>
+                <span>clicks</span>
+              </div>
+              <div>
+                <strong>3.4M</strong>
+                <span>impressions</span>
+              </div>
+              <div>
+                <strong>4.36%</strong>
+                <span>CTR</span>
+              </div>
+              <div>
+                <strong>8.7</strong>
+                <span>avg pos.</span>
+              </div>
+            </div>
+            <ol class="query-list">
+              <li><span>google search console api mcp</span><b>+31%</b></li>
+              <li><span>url inspection automation</span><b>+18%</b></li>
+              <li><span>sitemap submission workflow</span><b>+12%</b></li>
+            </ol>
+          </div>
+          <div class="tool-rail">
+            <span>connect_google_account</span>
+            <span>list_sites</span>
+            <span>inspect_url</span>
+            <span>submit_sitemap</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Supported tool surface">
+        <span>OAuth connection</span>
+        <span>Search Analytics</span>
+        <span>URL Inspection</span>
+        <span>Properties</span>
+        <span>Sitemaps</span>
+        <span>Confirm guards</span>
+        <span>Audit logs</span>
+      </section>
+
+      <section class="section intro">
+        <div>
+          <p class="section-kicker">Why it exists</p>
+          <h2>Search data belongs in the same loop as the work.</h2>
+        </div>
+        <p>
+          SEO and product teams keep bouncing between Search Console exports, browser tabs, spreadsheets, and agent prompts. This server exposes the core Search Console API through MCP so an assistant can check evidence before recommending titles, canonicals, sitemap changes, or page priorities.
+        </p>
+      </section>
+
+      <section class="section tool-section" id="tools">
+        <div class="section-heading">
+          <p class="section-kicker">Tool surface</p>
+          <h2>Built around the operations you actually run.</h2>
+        </div>
+        <div class="tool-grid">
+          <article>
+            <span class="chip blue">Auth</span>
+            <h3>Subscriber OAuth</h3>
+            <p>Connect a Google account per MCP subscriber, check connection state, and disconnect stored Search Console access when needed.</p>
+          </article>
+          <article>
+            <span class="chip green">Analytics</span>
+            <h3>Performance queries</h3>
+            <p>Query Search Analytics with dimensions, filters, data state, pagination, search type, and aggregation controls.</p>
+          </article>
+          <article>
+            <span class="chip red">Indexing</span>
+            <h3>URL inspection</h3>
+            <p>Inspect Google index status for a URL inside a verified Search Console property, with optional language targeting.</p>
+          </article>
+          <article>
+            <span class="chip yellow">Sitemaps</span>
+            <h3>Submit and manage</h3>
+            <p>List, fetch, submit, and delete sitemaps from the same assistant session that diagnoses crawl or indexing issues.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section flow-section" id="flow">
+        <div class="section-heading">
+          <p class="section-kicker">Connection flow</p>
+          <h2>Remote-first, account-scoped, and guarded.</h2>
+        </div>
+        <div class="flow-grid">
+          <article class="flow-step">
+            <span>01</span>
+            <h3>Connect via MCPize</h3>
+            <p>Use the hosted listing or the one-line MCPize command to add the server to an MCP client.</p>
+          </article>
+          <article class="flow-step">
+            <span>02</span>
+            <h3>Authorize Google</h3>
+            <p>The server returns a Google OAuth URL and stores refresh access per subscriber after the callback.</p>
+          </article>
+          <article class="flow-step">
+            <span>03</span>
+            <h3>Ask with evidence</h3>
+            <p>Agents can list properties, query performance, inspect URLs, and manage sitemap state from the MCP tool surface.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section deploy-section" id="deploy">
+        <div class="deploy-copy">
+          <p class="section-kicker">Deployment facts</p>
+          <h2>MCPize-ready HTTP transport with explicit safety rails.</h2>
+          <p>
+            The server runs as a remote HTTP MCP endpoint at <code>/mcp</code>, includes health checks at <code>/healthz</code> and <code>/ping</code>, and expects a stable subscriber identity header from MCPize.
+          </p>
+        </div>
+        <div class="deploy-terminal" aria-label="Deployment checklist">
+          <div><span>01</span><code>npm run build</code></div>
+          <div><span>02</span><code>npm start</code></div>
+          <div><span>03</span><code>GET /ping</code></div>
+          <div><span>04</span><code>POST /mcp</code></div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div>
+          <p class="section-kicker">Ready endpoint</p>
+          <h2>Connect Search Console to your MCP workflow.</h2>
+        </div>
+        <a class="button primary" href="https://mcpize.com/mcp/google-search-console-mcp-server">Open the MCPize listing</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Google Search Console MCP Server</span>
+      <a href="https://google-search-console-mcp-server.irensaltali.com/">google-search-console-mcp-server.irensaltali.com</a>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

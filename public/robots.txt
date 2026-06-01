@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://google-search-console-mcp-server.irensaltali.com/sitemap.xml
