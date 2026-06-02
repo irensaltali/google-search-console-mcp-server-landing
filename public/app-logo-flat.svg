@@ -1,0 +1,33 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="flatBg" x1="170" y1="148" x2="846" y2="876" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF5"/>
+      <stop offset="1" stop-color="#F3F6EC"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="250" y1="250" x2="654" y2="758" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.38"/>
+    </linearGradient>
+    <filter id="flatShadow" x="44" y="52" width="936" height="940" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="24"/>
+      <feGaussianBlur stdDeviation="24"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0313726 0 0 0 0 0.0627451 0 0 0 0 0.0470588 0 0 0 0.18 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#flatShadow)">
+    <rect x="96" y="96" width="832" height="832" rx="196" fill="url(#flatBg)"/>
+    <rect x="96" y="96" width="832" height="832" rx="196" stroke="#101713" stroke-width="14"/>
+
+    <rect x="202" y="202" width="620" height="620" rx="74" fill="url(#panel)"/>
+    <rect x="202" y="202" width="620" height="620" rx="74" stroke="#101713" stroke-width="16"/>
+
+    <rect x="301" y="506" width="116" height="220" rx="20" fill="#1A73E8"/>
+    <rect x="454" y="374" width="116" height="352" rx="20" fill="#D93025"/>
+    <rect x="607" y="282" width="116" height="444" rx="20" fill="#FBBC04"/>
+  </g>
+</svg>
