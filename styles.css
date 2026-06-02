@@ -101,37 +101,11 @@ code {
 }
 
 .brand-mark {
-  display: grid;
-  grid-template-columns: repeat(3, 9px);
-  align-items: end;
-  gap: 3px;
-  width: 42px;
-  height: 34px;
-  padding: 6px;
-  border: 1px solid var(--ink);
-  background: var(--paper-strong);
-  box-shadow: 4px 4px 0 var(--ink);
-}
-
-.brand-mark span {
   display: block;
-  width: 9px;
-  background: var(--green);
-}
-
-.brand-mark span:nth-child(1) {
-  height: 10px;
-  background: var(--blue);
-}
-
-.brand-mark span:nth-child(2) {
-  height: 18px;
-  background: var(--red);
-}
-
-.brand-mark span:nth-child(3) {
-  height: 24px;
-  background: var(--yellow);
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .site-nav {
@@ -156,9 +130,13 @@ code {
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
   width: min(1180px, calc(100% - 32px));
-  min-height: calc(100vh - 74px);
+  min-height: calc(100vh - 110px);
   margin: 0 auto;
-  padding: clamp(3rem, 7vw, 6rem) 0 5rem;
+  padding: clamp(2.5rem, 6vw, 4.75rem) 0 4rem;
+}
+
+.hero-copy {
+  max-width: 640px;
 }
 
 .eyebrow,
@@ -168,6 +146,14 @@ code {
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(217, 48, 37, 0.25);
+  background: rgba(255, 254, 246, 0.74);
+  box-shadow: 4px 4px 0 rgba(217, 48, 37, 0.08);
 }
 
 h1,
@@ -185,10 +171,11 @@ h2 {
 }
 
 h1 {
-  max-width: 820px;
-  margin-bottom: 1.35rem;
-  font-size: clamp(4rem, 9.4vw, 8.8rem);
+  max-width: 720px;
+  margin-bottom: 1rem;
+  font-size: clamp(3.7rem, 7.2vw, 6.6rem);
   letter-spacing: 0;
+  line-height: 0.9;
 }
 
 h2 {
@@ -203,10 +190,27 @@ h3 {
 }
 
 .hero-lede {
-  max-width: 660px;
-  margin-bottom: 1.4rem;
+  max-width: 600px;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+}
+
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-points span {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 254, 246, 0.78);
   color: var(--ink-soft);
-  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .hero-actions {
@@ -445,7 +449,7 @@ h3 {
 .install-note {
   max-width: 720px;
   margin: 0;
-  color: var(--ink-soft);
+  color: var(--ink);
   font-size: 0.82rem;
 }
 
